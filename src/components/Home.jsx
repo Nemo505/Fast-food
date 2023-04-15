@@ -3,11 +3,11 @@ import Banner from './Banner'
 import FoodCard from './Foods/FoodCard'
 import Cart from './Cart'
 
-const Home = () => {
+const Home = ({appDrinks}) => {
   return (
     <div>
         <Banner />
-        <FoodCard />
+        <FoodCard appDrinks={appDrinks}/>
         <Cart />
     </div>
   )

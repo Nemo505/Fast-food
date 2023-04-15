@@ -34,3 +34,26 @@ MyOrders(On Click)
 Steps To do
     install npm i react-router-dom
     BrowserRoute, Routes, Route
+    Create Card with api
+        name with synrc, await api
+        setname to useSate
+        api function inside useEffect
+    Detail
+        useParams for id
+        as mentioned, call api with id
+        setData to useState
+    Filter
+        In App.jsx,
+            items, setItem = useState( ) , 
+            fetchData
+                setItem(data)
+            Route
+            <Navbar items={}  setItem= {}
+            Product setItem= {}
+            
+        In Nav,
+            search, setSearch = useState()
+            filter = items.filter(  x => x.title.toLowerCase().includes(  value from input ) )
+            setItem{  filter   }
+
+    
