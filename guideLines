@@ -1,0 +1,36 @@
+Credit goes to
+https://www.pinterest.com/pin/793266921884210948/
+https://www.thecocktaildb.com/api.php
+
+
+color 
+yellowlish orange #EDB52E
+#E5C739
+#F2C000
+
+
+backdrop-blur-sm bg-white/30
+
+Navbar
+1. Brandname 
+2. searchBar
+3. Cart
+4. Profile
+___________________
+Hero Section
+
+___________________
+Foods
+    total six cards (One Food Card)
+
+______________________
+
+MyOrders(On Click)
+    order Cards()
+    Total(order and checkout)
+
+
+
+Steps To do
+    install npm i react-router-dom
+    BrowserRoute, Routes, Route

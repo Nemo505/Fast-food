@@ -1,16 +1,20 @@
-import { useState } from 'react'
-import Navbar from './components/Navbar'
-import Banner from './components/Banner'
-import Cart from './components/Cart'
+import { Route, Routes } from 'react-router-dom';
+import Navbar from './components/Navbar';
+import Home from './components/Home';
+import Detail from './components/Foods/Detail';
+import CheckOut from './components/CheckOut';
+
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
     <div className="App">
       <Navbar />
-      <Banner />
-      <Cart />
+      <Routes>
+          <Route path="/" element={<Home />}/>
+          <Route path="/detail/:id" element={<Detail />}/>
+          <Route path="/checkOut" element={<CheckOut />}/>
+          <Route path="*" element={<Home />}/>
+      </Routes>
     </div>
   )
 }

@@ -2,7 +2,9 @@ import React from 'react'
 
 const Banner = () => {
   return (
-    <div>Banner</div>
+    <div className='p-24 bg-slate-400'>
+      Banner
+    </div>
   )
 }
 
