@@ -1,8 +1,11 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect } from 'react';
+import {StateContextCustom} from '../context/StateContext';
 
-const Navbar = ({appDrinks, setAppDrinks}) => {
+const Navbar = () => {
   const [search, setSearch] = useState('');
-  
+
+  const {appDrinks, setAppDrinks} = StateContextCustom(state => state);
+
   useEffect(() => {
     const filter = appDrinks.filter(e => e.strDrink.toLowerCase().includes(search.toLowerCase()));
     console.log(filter);
