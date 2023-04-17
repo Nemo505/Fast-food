@@ -2,7 +2,7 @@ import { Route, Routes } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Detail from './components/Foods/Detail';
-import CheckOut from './components/CheckOut';
+import CheckOut from './components/Carts/CheckOut';
 
 function App() {
   

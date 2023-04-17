@@ -1,23 +1,26 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { StateContextCustom } from '../../context/StateContext'
 
 const FoodCard = ({}) => {
-  const {appDrinks} = StateContextCustom(state => state)
+  const {state:{drinks}} = StateContextCustom(state => state)
+  const {dispatch} = StateContextCustom()
+  const [limit, setLimit] = useState(8);
 
   return (  
-    <div className='bg-red-200 grid grid-cols-4'>
+    <div className='bg-red-200 flex flex-wrap'>
       {
-        appDrinks.map(drink => {
+      drinks.slice(0, limit ? limit : drinks.length).map(drink => {
           return (
-            <div className='max-w-[400px] max-h-[300px] md:max-w-[300px] p-5 text-center'  key={drink.idDrink} {...drink}>
-                <img src={drink.strDrinkThumb} alt="" className='object-cover'/>
+            <div className='items-center justify-center mx-auto bg-slate-800 text-center'  key={drink.idDrink}>
+                <img src={drink.strDrinkThumb} alt="" className='object-cover h-56 w-56 m-10'/>
 
-                <Link to={`/detail/${drink.idDrink}`}>
-                <button>
-                  {drink.strDrink}
+                <Link to={`/detail/${drink.idDrink}`}>Detail</Link> 
+                <h4> {drink.strDrink}</h4>
+                <button className='bg-red-600 p-2 rounded-md' 
+                  onClick={() => dispatch({type:"ADD_TO_CART", payload:{drink}  })}> 
+                  Add to cart
                 </button>
-              </Link>
             </div>
           )
         })

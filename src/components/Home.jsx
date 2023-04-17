@@ -1,7 +1,7 @@
 import React from 'react'
 import Banner from './Banner'
 import FoodCard from './Foods/FoodCard'
-import Cart from './Cart'
+import Cart from './Carts/Cart'
 
 const Home = () => {
   

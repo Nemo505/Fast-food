@@ -1,8 +1,11 @@
-import { createContext, useContext, useState, useEffect } from "react";
+import { createContext, useContext, useState, useEffect, useReducer } from "react";
+import { reducer } from "./Reducer";
 
 const StateContext = createContext();
 
 export const StateContextProvider = ({children}) => {
+
+    //api call for all lists
     const [appDrinks, setAppDrinks] = useState([]);
     useEffect(() => {
         navAppData();
@@ -19,7 +22,19 @@ export const StateContextProvider = ({children}) => {
             console.log(err.message);
         });
     }
-    const data = {appDrinks, setAppDrinks}
+    //Cart Count     
+    const initialState = {
+        drinks: [],
+        carts: []
+    }
+    
+    useEffect(() => {
+        dispatch({type:"ALL_DRINKS", payload:appDrinks});
+    }, [appDrinks]);
+
+    const [state, dispatch] = useReducer(reducer, initialState);
+    const data = {state, dispatch, setAppDrinks}
+
     return(
         <StateContext.Provider value={data}>
             {children}

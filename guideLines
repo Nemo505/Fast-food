@@ -56,4 +56,30 @@ Steps To do
             filter = items.filter(  x => x.title.toLowerCase().includes(  value from input ) )
             setItem{  filter   }
 
+    Using Global State instead of App
+
+        const  StateContext= createContext ()
+		export const StateContextProvider = ({children}) => {
+			const data = {.....}
+			
+			if const  [state, dispatch]= useReducer(reducer, initialState)
+				const data = {state, dispatch}
+				return {
+					StateContext.Provider value= {data}
+					children
+					StateContext.Provider
+				}
+			}
+		To avoid many useContext()
+		export const StateContextCustom = () => useContext(StateContext)
+
+        Call in Children File
+             const {appDrinks} = StateContextCustom(state => state)
+
+    Cart Count
+        onClick data pass from cart using dispatch
+        in navbar,
+            use call cart.length
+
+
     
