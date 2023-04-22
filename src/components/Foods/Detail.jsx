@@ -4,7 +4,6 @@ import { useParams } from 'react-router-dom'
 const Detail = () => {
   let {id} = useParams();
   const [drinkDetail, setDrinkDetail] = useState({});
-  console.log(id);
 
   useEffect(() => {
     drinkDetailData();

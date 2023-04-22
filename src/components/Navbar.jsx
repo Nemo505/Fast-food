@@ -7,6 +7,7 @@ const Navbar = () => {
 
   const {state:{drinks}, setAppDrinks} = StateContextCustom(state => state);
   const {state:{carts}} = StateContextCustom(state => state);
+  const {isMenuToggled, setIsMenuToggled} = StateContextCustom(state => state);
 
   useEffect(() => {
     const filter = drinks.filter(e => e.strDrink.toLowerCase().includes(search.toLowerCase()));
@@ -23,9 +24,9 @@ const Navbar = () => {
           <input type="text" value={search} placeholder='search' onChange={e => setSearch(e.target.value)}/>
         </div>
       </form>
-      <button className='py-1 mr-2 px-5 bg-slate-400 rounded-md'>
+      <button className='py-1 mr-2 px-5 bg-slate-400 rounded-md' onClick={() => setIsMenuToggled(!isMenuToggled)}>
         {carts? carts.length : 0}
-         (Cart)</button>
+         (Cart)</button>        
     </div>
   )
 }
