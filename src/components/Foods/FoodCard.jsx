@@ -1,45 +1,45 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { Link } from 'react-router-dom'
 import { StateContextCustom } from '../../context/StateContext'
-import { Card } from 'flowbite-react'
-// import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
-import './foodCard.css'
+import { Card, Tooltip } from 'flowbite-react'
+import {RiHeart3Line} from 'react-icons/ri';
+import {RiHeart3Fill} from 'react-icons/ri';
 
 const FoodCard = ({}) => {
   const {state:{drinks}} = StateContextCustom(state => state)
   const {dispatch} = StateContextCustom()
   const [limit, setLimit] = useState(8);
-  const  [toggleHeart, setToggleHeart] = useState(false)
-    
-  const  changeColor = useCallback(() =>{
-     setToggleHeart(!toggleHeart)
-    },[])
+  const [like, setLike] = useState([]);
  
   return (  
-    <div className="flex flex-wrap ">
+    <div className="flex flex-wrap absolute">
       {
       drinks.slice(0, limit ? limit : drinks.length).map(drink => {
           return (
-            <div className='items-center justify-center mx-auto m-9'  key={drink.id}>
-                
-                <div className="max-w-xs">
-                  <Card
-                    imgAlt="food image"
-                    imgSrc={drink.image} >
+            <div className='items-center justify-center mx-auto'  key={drink.id}>
+                <div className="max-w-xs ">
 
-                    <p className="font-normal text-gray-700 dark:text-gray-400 flex justify-between">
-                     
-                        {...  drink.title.split(' ').join('- ').split('-', 3)}                            
-                    
-                      {/* <FavoriteBorderOutlinedIcon className={
-                          toggleHeart ? 'heart active' : 'heart'
-                        } 
-                        onClick={() => {dispatch({type:"ADD_TO_CART", payload:{drink} },{changeColor}) }} /> 
-                        */}
-                      <Link to={`/detail/${drink.id}`}>Detail</Link> 
+                  {/* heart with add to cart */}
+                  <div className='relative top-12 -left-64' >
+                      {like.includes(`red${drink.id}`) ?
+                        <RiHeart3Fill className='' size={25}  style={{outline: 'none', color: 'red'}}
+                          onClick={() => {dispatch({type:"ADD_TO_CART", payload:{drink} }), setLike([...like, `red${drink.id}`]) }} /> 
+                        :
+                        <Tooltip content="Add to Card ?">
+                          <RiHeart3Line className='hover:saturate-200' size={25} style={{outline: 'none', color: 'red'}}
+                          onClick={() => {dispatch({type:"ADD_TO_CART", payload:{drink} }), setLike([...like, `red${drink.id}`]) }} /> 
+                        </Tooltip>
+                      }  
+                  </div>
+
+                  {/* Card Style */}
+                  <Card imgSrc={drink.image} alt=""  className='object-fill'>
+                    <p className="font-bold text-gray-700 dark:text-gray-400 flex justify-between">
+                      {...  drink.title.split(' ').join('- ').split('-', 3)}
+                      <Link to={`/detail/${drink.id}`} className=''>Detail</Link> 
                     </p>
-
                   </Card>
+
                 </div>
           
             </div>
