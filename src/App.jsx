@@ -3,6 +3,7 @@ import Navbar from './components/Navbar';
 import Home from './components/Home';
 import Detail from './components/Foods/Detail';
 import CheckOut from './components/Carts/CheckOut';
+import 'flowbite';
 
 function App() {
   
