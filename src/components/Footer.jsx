@@ -27,8 +27,9 @@ const Footer = () => {
       <div className="flex flex-wrap items-center md:justify-between justify-center">
         <div className="w-full md:w-4/12 px-4 mx-auto text-center">
           <div className="text-sm -500 font-semibold py-1">
-            Copyright © <span id="get-current-year">2021</span><a href="https://www.creative-tim.com/product/notus-js" className=" hover:text-gray-800" target="_blank"/> Notus JS by
-            <a href="https://www.creative-tim.com?ref=njs-profile" className=" hover:-800">Creative Tim</a>.
+            Copyright © <span id="get-current-year">2023</span>
+            <a href="" className=" hover:text-gray-800" target="_blank"/> Maple Foodie By Kazue
+            <a href="" className=" hover:-800"></a>.
           </div>
         </div>
       </div>

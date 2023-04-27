@@ -13,7 +13,7 @@ const Navbar = () => {
   const {isMenuToggled, setIsMenuToggled} = StateContextCustom(state => state);
 
   useEffect(() => {
-    const filter = drinks.filter(e => e.strDrink.toLowerCase().includes(search.toLowerCase()));
+    const filter = drinks.filter(e => e.title.toLowerCase().includes(search.toLowerCase()));
     console.log(filter);
     setAppDrinks(filter);
   }, [search]);

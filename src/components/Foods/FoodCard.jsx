@@ -35,7 +35,7 @@ const FoodCard = ({}) => {
                   {/* Card Style */}
                   <Card imgSrc={drink.image} alt=""  className='object-fill'>
                     <p className="font-bold text-gray-700 dark:text-gray-400 flex justify-between">
-                      {...  drink.title.split(' ').join('- ').split('-', 3)}
+                      {...  drink.title.split(' ').join('- ').split('-', 2)}
                       <button className='bg-orange-500 text-white rounded-md'>
                         <Link to={`/detail/${drink.id}`} className='m-4'>Detail</Link> 
                       </button>
