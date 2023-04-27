@@ -1172,6 +1172,10 @@ input:checked + .toggle-bg {
   top: 1.25rem;
 }
 
+.bottom-10 {
+  bottom: 2.5rem;
+}
+
 .z-10 {
   z-index: 10;
 }
@@ -2668,6 +2672,11 @@ input:checked + .toggle-bg {
 
 .fill-yellow-400 {
   fill: #E3A008;
+}
+
+.object-contain {
+  -o-object-fit: contain;
+     object-fit: contain;
 }
 
 .object-cover {
