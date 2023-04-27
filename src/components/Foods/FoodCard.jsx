@@ -12,7 +12,7 @@ const FoodCard = ({}) => {
   const [like, setLike] = useState([]);
  
   return (  
-    <div className="flex flex-wrap absolute">
+    <div className="flex flex-wrap absolut bg-gray-50">
       {
       drinks.slice(0, limit ? limit : drinks.length).map(drink => {
           return (
@@ -20,7 +20,7 @@ const FoodCard = ({}) => {
                 <div className="max-w-xs ">
 
                   {/* heart with add to cart */}
-                  <div className='relative top-12 -left-64' >
+                  <div className= {`relative top-14 left-2 `}  >
                       {like.includes(`red${drink.id}`) ?
                         <RiHeart3Fill className='' size={25}  style={{outline: 'none', color: 'red'}}
                           onClick={() => {dispatch({type:"ADD_TO_CART", payload:{drink} }), setLike([...like, `red${drink.id}`]) }} /> 
@@ -36,7 +36,9 @@ const FoodCard = ({}) => {
                   <Card imgSrc={drink.image} alt=""  className='object-fill'>
                     <p className="font-bold text-gray-700 dark:text-gray-400 flex justify-between">
                       {...  drink.title.split(' ').join('- ').split('-', 3)}
-                      <Link to={`/detail/${drink.id}`} className=''>Detail</Link> 
+                      <button className='bg-orange-500 text-white rounded-md'>
+                        <Link to={`/detail/${drink.id}`} className='m-4'>Detail</Link> 
+                      </button>
                     </p>
                   </Card>
 
