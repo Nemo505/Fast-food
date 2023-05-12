@@ -20,15 +20,15 @@ const Navbar = () => {
 
   
   return (
-    <nav className="border-gray-200 bg-orange-500 dark:bg-gray-800 dark:border-gray-700 outline-orange-700">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
+    <nav className="border-gray-200 z-10" style={{background: "linear-gradient(to right bottom, #FFA49F, #DADD98)", width:"100%", position:"fixed", boxShadow:"1px 5px 10px gray"}}>
+      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-3">
       <a href="#" className="flex items-center">
           <img src={logo} className="mr-3 h-8 object-fill" alt="maple_logo" />
           <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Maple</span>
       </a>
         <form action="">
-          <div className=''>
-            <input type="text" value={search} placeholder='search' className='rounded-md' onChange={e => setSearch(e.target.value)}/>
+          <div className=' '>
+            <input type="text" value={search} placeholder='search' className='rounded-lg border-none hover:outline-red-500' onChange={e => setSearch(e.target.value)}/>
           </div>
         </form>
 

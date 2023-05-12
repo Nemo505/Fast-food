@@ -6,7 +6,7 @@ import GitHubIcon from '@mui/icons-material/GitHub';
 
 const Footer = () => {
   return (
-  <footer className="relative bg-orange-500">
+  <footer className="relative ">
       <h5 className='text-center'>Contact us</h5>
       <div className="mt-2 lg:mb-0 mb-6 flex items-center justify-center">
         <button className="bg-white  shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">

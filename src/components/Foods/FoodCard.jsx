@@ -8,11 +8,11 @@ import {RiHeart3Fill} from 'react-icons/ri';
 const FoodCard = ({}) => {
   const {state:{drinks}} = StateContextCustom(state => state)
   const {dispatch} = StateContextCustom()
-  const [limit, setLimit] = useState(8);
+  const [limit, setLimit] = useState(6);
   const [like, setLike] = useState([]);
  
   return (  
-    <div className="flex flex-wrap absolut bg-gray-50">
+    <div className="flex flex-wrap gap-3">
       {
       drinks.slice(0, limit ? limit : drinks.length).map(drink => {
           return (
